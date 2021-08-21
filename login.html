@@ -94,9 +94,9 @@
         <div id="registration-page" class="hide">
           <button id="show-login">Sign In</button>
           <h3>Sign Up</h3>
-          Email <br />
+          Enrolment Number <br />
           <input type="email" id="registration-email" /><br />
-          Confirm Email <br />
+          Confirm Enrolment Number <br />
           <input
             type="email"
             id="registration-reemail"
@@ -110,7 +110,7 @@
         <div id="login-page" class = "forms-in">
           <button id="show-register">Sign Up</button>
           <h3>Sign In</h3>
-          Email <br />
+          Enrolment Number <br />
           <input type="email" id="login-email" /><br />
           Password <br />
           <input type="password" id="login-password" /><br />
@@ -209,25 +209,25 @@
 
         if (email.trim() == "") 
         {
-          alert("Enter Email");
+          alert("Enter Enrolment Number");
         } 
         else if (password.trim().length < 7) 
         {
           alert("Password must be at least 7 characters");
         } else if (email != reemail) 
         {
-          alert("emails do not match");
+          alert("Enrolment numbers do not match");
         } 
         else {
           auth
-            .createUserWithEmailAndPassword(email, password)
+            .createUserWithEmailAndPassword(email + "@ntskolkata.org", password)
             .catch(function (error) {
               // Handle Errors here.
               var errorCode = error.code;
               var errorMessage = error.message;
               alert(errorMessage);
               // ...
-            });
+            }); 
         }
       };
 
@@ -250,7 +250,7 @@
         const password = document.querySelector("#login-password").value;
 
         if (email.trim() == "") {
-          alert("Enter Email");
+          alert("Enter Enrolment Number");
         } else if (password.trim() == "") {
           alert("Enter Password");
         } else {
